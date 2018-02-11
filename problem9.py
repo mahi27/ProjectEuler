@@ -6,9 +6,13 @@ Created on Sat Apr 29 22:00:29 2017
 """
 
 #%%
-for num in range(1, 1000):
-    for dig in range(num, 1000 - num):
-        i = 1000 - num - dig
-        if (num * num)+(dig * dig) == (i * i):
-            print(num, dig, i)
-            print("Product: {}".format(num * dig * i))
+
+for _ in range(int(input())):
+    n = int(input())
+    highest = -1
+    for a in range(1, int(n/3)):
+        b = (n*n - 2*n*a)//(2*n - 2*a);
+        c = n - a - b
+        if (a * a)+(b * b) == (c * c):
+            highest = a*b*c
+    print(highest)
