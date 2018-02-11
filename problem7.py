@@ -5,27 +5,23 @@ Created on Mon Apr 24 22:11:00 2017
 @author: Mahhita
 """
 #%%
-def is_prime(number):
-      if number < 2:
-            return False
-      elif number == 2:
-         return True
-      elif number % 2 == 0:
-            return False
-      else:
-            for i in range(3, number):
-                  if not number % i:
-                        return False
-            return True 
+def is_prime(n):
+    if n == 2 or n == 3: return True
+    if n < 2 or n%2 == 0: return False
+    if n < 9: return True
+    if n%3 == 0: return False
+    r = int(n**0.5)
+    f = 5
+    while f <= r:
+        if n%f == 0: return False
+        if n%(f+2) == 0: return False
+        f +=6
+    return True 
 
-
-#%%
-#This array stores all the prime numbers found till n
 primes = []
-n = 10001
-i = 1
-while len(primes)<n:
-      if is_prime(i):
-            primes.append(i)
-      i = i + 1
-#%%
+for i in range(104744):
+    if is_prime(i):
+        primes.append(i)
+
+for i in range(int(input())):
+    print(primes[int(input())-1])
