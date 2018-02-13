@@ -14,5 +14,7 @@ for _ in range(int(input())):
         b = (n*n - 2*n*a)//(2*n - 2*a);
         c = n - a - b
         if (a * a)+(b * b) == (c * c):
-            highest = a*b*c
+            temp = a*b*c
+            if temp > highest:
+                highest = temp
     print(highest)
