@@ -1,6 +1,6 @@
 from datetime import *
 import math
- 
+
 def counters(d1,d2,y0,m0):
     counter = 0
     while(d1 <= d2):
@@ -47,6 +47,5 @@ for _ in range(int(input())):
             d1 = date(y0,m0,d0)
             d2 = date(yf,mf,df)
             c1 = counters(d1,d2,y0,m0)
-            c2 = 0
-           
+            c2 = 0           
     print(c1+c2)
